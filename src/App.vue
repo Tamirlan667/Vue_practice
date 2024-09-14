@@ -1,5 +1,23 @@
 <template>
   <div class="main">
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home">Home</a></li>
+          <li class="nav__item"><a href="#politics">Politics</a></li>
+          <li class="nav__item"><a href="#tech">Tech</a></li>
+          <li class="nav__item"><a href="#entertainment">Entertainment</a></li>
+          <li class="nav__item"><a href="#travel">Travel</a></li>
+          <li class="nav__item"><a href="#sports">Sports</a></li>
+        </ul>
+        <div class="nav__search">
+          <input type="text" placeholder="Search..." />
+          <button class="search__button">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
     <div class="container">
       <div class="main__card">
         <!-- Left cards -->
@@ -71,10 +89,55 @@ export default {
 </script>
 
 <style lang="scss">
-.main {
-  margin-top: 100px;
+.header {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: flex-end; /* Перемещает все элементы на правую сторону */
+  align-items: center;
 }
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.nav__item {
+  margin: 0 1rem;
+}
+.nav__item a {
+  text-decoration: none;
+  color: black;
+}
+.nav__search {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem; /* Добавляет промежуток между списком навигации и поиском */
+}
+.nav__search input {
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+.search__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+.search__button .fa-search {
+  font-size: 1rem;
+  color: black;
+}
+
 .main__card {
+  cursor: pointer;
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto auto;
